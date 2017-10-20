@@ -1,7 +1,7 @@
-FROM neo4j:3.1.4
+FROM neo4j:3.2.5
 RUN apk add --update zip unzip && rm -rf /var/cache/apk/*
 
-RUN curl -s -L -o /var/lib/neo4j/plugins/neo4j-spatial-server-plugin.jar https://github.com/neo4j-contrib/spatial/files/1227950/neo4j-spatial-0.24-neo4j-3.1.4-server-plugin.zip
+ADD https://github.com/neo4j-contrib/m2/blob/master/releases/org/neo4j/neo4j-spatial/0.24.1-neo4j-3.2.5/neo4j-spatial-0.24.1-neo4j-3.2.5-server-plugin.jar?raw=true /var/lib/neo4j/plugins/neo4j-spatial-server-plugin.jar
 
 EXPOSE 7474
 EXPOSE 7687
